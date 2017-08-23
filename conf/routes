@@ -1,0 +1,20 @@
+# Routes
+
+#Secureed
+DELETE  /deleteField        controllers.AdminServiceController.deleteField(id)
+GET     /getResponseNumber  controllers.AdminServiceController.getResponseNumber
+GET     /getUserData        controllers.AdminServiceController.getUserData
+GET     /getFields          controllers.AdminServiceController.getFields
+GET     /getFieldNames      controllers.AdminServiceController.getFieldNames
+GET     /getFieldById       controllers.AdminServiceController.getFieldById(id)
+POST    /saveField          controllers.AdminServiceController.saveField
+GET     /ws                 controllers.AdminServiceController.socket
+
+#Free Access
+GET     /getActiveFields     controllers.UserServiceController.getActiveFields
+POST    /saveUserData       controllers.UserServiceController.saveUserData
+OPTIONS /*path              controllers.AdminServiceController.saveOptions(path)
+
+POST    /login              controllers.security.AuthenticationController.logIn
+GET     /logout             controllers.security.AuthenticationController.logOut
+
