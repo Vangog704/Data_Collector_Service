@@ -10,7 +10,7 @@
     <properties>
         <property name="hibernate.show_sql" value="true"/>
         <property name="hibernate.hbm2ddl.auto" value="create"/>
-        <property name="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
+        <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL92Dialect"/>
         <property name="hibernate.hbm2dll.import_files" value="conf/import.sql"/>
         <property name="hibernate.hbm2ddl.import_files_sql_extractor" value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor" />
     </properties>
