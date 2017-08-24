@@ -13,27 +13,26 @@ public class Field {
 
 	//Declaration vars
 	@Id
-	@javax.persistence.Column(name = "name", unique = true, nullable = false)
+	@Column(name = "name", unique = true, nullable = false)
 	private String label;
 
-	@javax.persistence.Column(name="type", nullable = false)
+	@Column(nullable = false)
 	private String type;
 
-	@javax.persistence.Column(name="isActive", nullable = false)
+	@Column(nullable = false)
 	private boolean isActive;
 
-	@javax.persistence.Column(name="required", nullable = false)
+	@Column(nullable = false)
 	private boolean required;
 
 	@ElementCollection(fetch = FetchType.EAGER)
 	@Fetch(FetchMode.SELECT)
+	@Column(name="value")
 	@CollectionTable(name="items", joinColumns=@JoinColumn(name="item"))
-	@javax.persistence.Column(name="value")
 	private Set<String> items;
 	
 	//Constructors
-	public Field()
-	{
+	public Field() {
 		items = new HashSet<>();
 	}
 	public Field(JsonNode obj)
@@ -131,5 +130,4 @@ public class Field {
 		this.items = items;
 	}
 	//-----------------------------------------
-
 }
