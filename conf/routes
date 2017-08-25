@@ -16,5 +16,5 @@ POST    /saveUserData       controllers.UserServiceController.saveUserData
 OPTIONS /*path              controllers.AdminServiceController.saveOptions(path)
 
 POST    /login              controllers.security.AuthenticationController.logIn
-GET     /logout             controllers.security.AuthenticationController.logOut
+POST    /logout             controllers.security.AuthenticationController.logOut
 

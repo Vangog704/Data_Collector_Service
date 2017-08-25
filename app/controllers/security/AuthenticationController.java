@@ -40,11 +40,11 @@ public class AuthenticationController extends Controller {
     @Transactional()
     @With(HeaderMakerFilter.class)
     public Result logOut() {
-
-        List<String> tokens = request().getHeaders().toMap().get("authToken");
-        if(tokens != null) {
+        JsonNode body = request().body().asJson();
+        String token = body.findValue("login").asText();
+        if(token != null) {
             UserDAO UDAO = new UserDAOImpl(api.em());
-            User user = UDAO.get(tokens.get(0));
+            User user = UDAO.get(token);
             if(user != null) {
                 user.setAuthToken(null);
                 UDAO.update(user);
